@@ -1,14 +1,100 @@
 VERSION 5.00
 Begin VB.Form Form1 
+   BackColor       =   &H0000FFFF&
    Caption         =   "Kalkulator Sederhana "
    ClientHeight    =   4020
    ClientLeft      =   120
    ClientTop       =   465
-   ClientWidth     =   6210
+   ClientWidth     =   7770
    LinkTopic       =   "Form1"
    ScaleHeight     =   4020
-   ScaleWidth      =   6210
+   ScaleWidth      =   7770
    StartUpPosition =   3  'Windows Default
+   Begin VB.CommandButton Command11 
+      Caption         =   ">"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   13.5
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   495
+      Left            =   4200
+      TabIndex        =   17
+      Top             =   2280
+      Width           =   735
+   End
+   Begin VB.CommandButton Command10 
+      Caption         =   "<"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   13.5
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   495
+      Left            =   3240
+      TabIndex        =   16
+      Top             =   2280
+      Width           =   735
+   End
+   Begin VB.CommandButton Command9 
+      Caption         =   "^"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   13.5
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   495
+      Left            =   5160
+      TabIndex        =   15
+      Top             =   2280
+      Width           =   735
+   End
+   Begin VB.CommandButton Command8 
+      Caption         =   "="
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   13.5
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   495
+      Left            =   5160
+      TabIndex        =   14
+      Top             =   1560
+      Width           =   735
+   End
+   Begin VB.CommandButton Cmdpersen 
+      Caption         =   "%"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   13.5
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   495
+      Left            =   5160
+      TabIndex        =   13
+      Top             =   840
+      Width           =   735
+   End
    Begin VB.CommandButton Command6 
       Caption         =   "C"
       BeginProperty Font 
@@ -21,10 +107,10 @@ Begin VB.Form Form1
          Strikethrough   =   0   'False
       EndProperty
       Height          =   495
-      Left            =   4200
+      Left            =   4680
       TabIndex        =   12
-      Top             =   2280
-      Width           =   735
+      Top             =   3000
+      Width           =   1215
    End
    Begin VB.CommandButton Command5 
       Caption         =   "Exit"
@@ -40,8 +126,8 @@ Begin VB.Form Form1
       Height          =   495
       Left            =   3240
       TabIndex        =   11
-      Top             =   2280
-      Width           =   735
+      Top             =   3000
+      Width           =   1335
    End
    Begin VB.CommandButton Command4 
       Caption         =   "-"
@@ -133,6 +219,7 @@ Begin VB.Form Form1
       Width           =   1575
    End
    Begin VB.Label Label4 
+      BackColor       =   &H000000FF&
       Caption         =   "Kalkulator Sederhana "
       BeginProperty Font 
          Name            =   "MS Sans Serif"
@@ -144,7 +231,7 @@ Begin VB.Form Form1
          Strikethrough   =   0   'False
       EndProperty
       Height          =   495
-      Left            =   1440
+      Left            =   1800
       TabIndex        =   4
       Top             =   120
       Width           =   3015
@@ -206,8 +293,21 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+Private Sub Cmdpersen_Click()
+Text3.Text = Val(Text1.Text) / 100
+Text3.Text = Val(Text2.Text) / 100
+End Sub
+
 Private Sub Command1_Click()
 Text3.Text = Val(Text1.Text) * Val(Text2.Text)
+End Sub
+
+Private Sub Command10_Click()
+Text3.Text = Val(Text1.Text) < Val(Text2.Text)
+End Sub
+
+Private Sub Command11_Click()
+Text3.Text = Val(Text1.Text) > Val(Text2.Text)
 End Sub
 
 Private Sub Command2_Click()
@@ -230,5 +330,17 @@ Private Sub Command6_Click()
 Text1.Text = ""
 Text2.Text = ""
 Text3.Text = ""
+End Sub
+
+Private Sub Command7_Click()
+Text3.Text = Val(Text1.Text)
+End Sub
+
+Private Sub Command8_Click()
+Text3.Text = Val(Text1.Text) > Val(Text2.Text)
+End Sub
+
+Private Sub Command9_Click()
+Text3.Text = Val(Text1.Text) ^ Val(Text2.Text)
 End Sub
 
